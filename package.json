@@ -1,0 +1,30 @@
+{
+  "name": "bitcoinjs-adventure",
+  "version": "1.0.0",
+  "description": "Learn how to use bitcoinjs-lib",
+  "main": "index.js",
+  "bin": {
+    "bitcoinjs-adventure": "runner.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weilu/bitcoinjs-adventure.git"
+  },
+  "keywords": [
+    "bitcoin",
+    "bitcoinjs",
+    "nodeschool",
+    "adventure"
+  ],
+  "author": "Wei Lu <luwei.here@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weilu/bitcoinjs-adventure/issues"
+  },
+  "homepage": "https://github.com/weilu/bitcoinjs-adventure",
+  "dependencies": {
+    "adventure": "^2.8.0",
+    "adventure-verify": "^2.2.0",
+    "bitcoinjs-lib": "^1.1.4"
+  }
+}
