@@ -1,0 +1,11 @@
+Write a program that imports a private key and returns the corresponding Bitcoin address.
+
+Here is some boilerplate code to get you started:
+
+  var bitcoin = require('bitcoinjs-lib')
+
+  module.exports = function privKeyToAddress(wif) {
+    // ...
+  }
+
+Use `$ADVENTURE_COMMAND verify PROGRAM.js` to verify your program.
