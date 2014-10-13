@@ -1,14 +1,15 @@
 ## Task
 
-Write a program that imports a private key (in WIF format) and returns the corresponding Bitcoin address (base58Check encoded).
+Write a program that reads a private key in WIF format, and returns the corresponding Bitcoin address, base58Check encoded.
 
 ## Input & Output Formats
 
 - WIF stands for Wallet Import Format. It is the most common way of serializing private keys in Bitcoinland.
 - Base58Check is base58 with a checksum.
-- Base58 is a binary-to-text encoding scheme similar to base64 but without using oOIl+/
+- Base58 is a binary-to-text encoding scheme similar to base64 but without using the characters: `oOIl+/`
 
-The expected output should be a bitcoin address string starting with '1'
+You will be passed the WIF-format private key as a String.
+Your output should be a bitcoin address String. Note it will start with '1'.
 
 ## Sample Input & Output
 
