@@ -2,10 +2,7 @@ var fs = require('fs')
 var path = require('path')
 var bitcoin = require('bitcoinjs-lib')
 
-exports.problem = fs.createReadStream(__dirname + '/problem.txt')
-exports.solution = fs.createReadStream(__dirname + '/solution.js')
-
-exports.verify = function(args, cb) {
+function verify(args, cb) {
   var fn = require(path.resolve(args[0]))
 
   try {
@@ -23,3 +20,11 @@ exports.verify = function(args, cb) {
     cb(false)
   }
 }
+
+module.exports = {
+  problem: fs.readFileSync(__dirname + '/problem.md', 'utf8'),
+  solution: fs.readFileSync(__dirname + '/solution.js', 'utf8'),
+  boilerplate: fs.readFileSync(__dirname + '/boilerplate.js', 'utf8'),
+  verify: verify
+}
+

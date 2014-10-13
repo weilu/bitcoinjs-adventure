@@ -23,8 +23,11 @@
   },
   "homepage": "https://github.com/weilu/bitcoinjs-adventure",
   "dependencies": {
-    "adventure": "^2.8.0",
-    "adventure-verify": "^2.2.0",
+    "adventure-map": "^1.0.0",
     "bitcoinjs-lib": "^1.1.4"
+  },
+  "exercises": {
+    "Address": "problems/address",
+    "KeyGen": "problems/keygen"
   }
 }

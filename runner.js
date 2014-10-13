@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 
-var adventure = require('adventure')
-var shop = adventure('bitcoinjs-adventure')
+var path = require('path')
+var adventureMap = require('adventure-map')
+var pkg = require('./package.json')
 
-var problems = ['address', 'keygen']
-problems.forEach(function(prob) {
-  shop.add(prob, function() {
-    return require('./problems/' + prob)
-  })
+Object.keys(pkg.exercises).forEach(function(name) {
+  pkg.exercises[name] = path.resolve(__dirname, pkg.exercises[name])
 })
 
-shop.execute(process.argv.slice(2))
+var adventure = adventureMap(pkg)
+
+if (!module.parent) adventure.execute(process.argv.slice(2))
+
+module.exports = adventure

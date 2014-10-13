@@ -32,5 +32,5 @@ In bitcoinjs-lib, both ECKey and Address provide serialization/deserialization f
 
 ## Read more
 
-WIF: https://en.bitcoin.it/wiki/WIF
-Bitcoin Address: https://en.bitcoin.it/wiki/Technical_background_of_Bitcoin_addresses
+- [WIF](https://en.bitcoin.it/wiki/WIF)
+- [Bitcoin Address](https://en.bitcoin.it/wiki/Technical_background_of_Bitcoin_addresses)

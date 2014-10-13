@@ -23,5 +23,5 @@ In bitcoinjs-lib, ECKey provides a keygen function.
 
 ## Read more
 
-Elliptic Curve Digital Signature Algorithm (ECDSA): http://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm
-Bitcoin Private Key: https://en.bitcoin.it/wiki/Private_key
+- [Elliptic Curve Digital Signature Algorithm (ECDSA)](http://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)
+- [Bitcoin Private Key](https://en.bitcoin.it/wiki/Private_key)
