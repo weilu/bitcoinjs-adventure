@@ -18,15 +18,17 @@ Expected output: 14VjxqrgfhgoWtJnJtDVwwppso451ohFrj
 
 ## Boilerplate
 
-  var bitcoin = require('bitcoinjs-lib')
+```js
+var bitcoin = require('bitcoinjs-lib')
 
-  module.exports = function privKeyToAddress(wif) {
-    // ...
-  }
+module.exports = function privKeyToAddress(wif) {
+  // ...
+}
+```
 
 Use `$ADVENTURE_COMMAND verify PROGRAM.js` to verify your program.
 
-## Hint
+## Hints
 
 In bitcoinjs-lib, both ECKey and Address provide serialization/deserialization functions.
 

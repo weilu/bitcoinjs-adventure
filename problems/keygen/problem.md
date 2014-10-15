@@ -9,15 +9,17 @@ Sample output: L2Jow6C4LgiU9Ciz5ahsP9LjnbvNUt3DF6hFqJwjzKaX5CKnazQ7
 
 ## Boilerplate
 
-  var bitcoin = require('bitcoinjs-lib')
+```js
+var bitcoin = require('bitcoinjs-lib')
 
-  module.exports = function keygen() {
-    // ...
-  }
+module.exports = function keygen() {
+  // ...
+}
+```
 
 Use `$ADVENTURE_COMMAND verify PROGRAM.js` to verify your program.
 
-## Hint
+## Hints
 
 In bitcoinjs-lib, ECKey provides a keygen function.
 
