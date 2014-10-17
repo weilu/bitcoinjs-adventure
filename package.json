@@ -28,6 +28,7 @@
   },
   "exercises": {
     "Address": "problems/address",
-    "KeyGen": "problems/keygen"
+    "KeyGen": "problems/keygen",
+    "Transaction": "problems/transaction"
   }
 }
