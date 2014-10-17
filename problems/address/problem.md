@@ -11,7 +11,7 @@ Write a program that reads a private key in WIF format, and returns the correspo
 You will be passed the WIF-format private key as a String.
 Your output should be a bitcoin address String. Note it will start with '1'.
 
-## Sample Input & Output
+## Sample Inputs & Outputs
 
 Sample input: L2Jow6C4LgiU9Ciz5ahsP9LjnbvNUt3DF6hFqJwjzKaX5CKnazQ7
 Expected output: 14VjxqrgfhgoWtJnJtDVwwppso451ohFrj

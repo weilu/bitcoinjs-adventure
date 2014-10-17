@@ -2,7 +2,7 @@
 
 Write a program that __securely__ generates a private key and returns the generated key in WIF format
 
-## Sample Input & Output
+## Sample Inputs & Outputs
 
 Sample input: no input
 Sample output: L2Jow6C4LgiU9Ciz5ahsP9LjnbvNUt3DF6hFqJwjzKaX5CKnazQ7
