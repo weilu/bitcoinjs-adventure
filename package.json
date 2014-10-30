@@ -29,6 +29,7 @@
   "exercises": {
     "Address": "problems/address",
     "KeyGen": "problems/keygen",
+    "Unspent": "problems/unspent",
     "Transaction": "problems/transaction"
   }
 }
