@@ -1,4 +1,4 @@
-Bitcoin's blockchain is made of blocks. Every block can be considered an ordered bundle of transactions. A transaction consists of inputs and outputs. I think of a transaction as a record of money changed hands, where an input is a reference to where the money comes from and an output declares where the money is going.
+Bitcoin's blockchain is made of blocks. Every block can be considered an ordered bundle of transactions. A transaction consists of inputs and outputs. One may think of a transaction as a record of money changed hands, where an input is a reference to where the money comes from and an output declares where the money is going.
 
 ----
 
