@@ -24,7 +24,9 @@
   "homepage": "https://github.com/weilu/bitcoinjs-adventure",
   "dependencies": {
     "adventure-map": "^1.0.0",
-    "bitcoinjs-lib": "^1.1.4"
+    "bitcoinjs-lib": "^1.1.4",
+    "cb-blockr": "^2.0.0",
+    "superagent": "^0.20.0"
   },
   "exercises": {
     "Address": "problems/address",

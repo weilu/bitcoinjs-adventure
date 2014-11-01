@@ -1,24 +1,33 @@
 # Task
 
-Write a program that takes an address and the network, and returns an array of objects each representing an unspent transaction output associated with the given address. To represent an unspent transaction output of an address, we need the transaction id to identify the transaction, the output index to identify the specific output in that transaction we care about, and last but not least, the amount transfered to our address by the above-mentioned transaction and its output.
+Write a program that takes an address, a network, and a callback function. Find unspent transaction outputs of the given address, and invoke the callback with two arguments: an Error object if there is any, and an array of objects each representing an unspent transaction output associated with the given address.
+
+To represent an unspent transaction output of an address, we need the transaction id to identify the transaction, the output index to identify the specific output in that transaction we care about, and last but not least, the amount transfered to our address by the above-mentioned transaction and its output.
 
 ## Input & Output Formats
 
 Input:
 
-- address is a base58check encoded string
-- network is a string. Assume the value can be either 'bitcoin' or 'testnet'
+* address is a base58check encoded string
+* network is a string. Assume the value can be either 'bitcoin' or 'testnet'
+* callback is a function that takes two arguments:
+  * error is an Error object if there is any
+  * an array of objects each representing an unspent transaction output
 
-The expected output is an array of unspent transaction output objects:
+An unspent transaction output object has the following properties:
 
-- txId: transaction id is a string
-- vout: index is an integer
-- value: amount is an integer
+* txId: transaction id is a string
+* vout: index is an integer
+* value: amount is an integer
 
 ## Sample Inputs & Outputs
 
 ```js
-getUnspent('mijTkG8nYpN57CZNPqmGUZamqyspoxtxd4')
+getUnspents('mijTkG8nYpN57CZNPqmGUZamqyspoxtxd4', 'testnet', function(err, unspents) {
+  unspents.forEach(function(unspent) {
+    console.log(unspent)
+  })
+})
 
 // [
 //   {
@@ -34,7 +43,7 @@ getUnspent('mijTkG8nYpN57CZNPqmGUZamqyspoxtxd4')
 ```js
 var API = require('cb-blockr') // or cb-helloblock
 
-module.exports = function getUnspent(address, network) {
+module.exports = function getUnspents(address, network, callback) {
   // ...
 }
 ```
