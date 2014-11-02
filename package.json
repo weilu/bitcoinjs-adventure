@@ -26,6 +26,7 @@
     "adventure-map": "^1.0.0",
     "bitcoinjs-lib": "^1.1.4",
     "cb-blockr": "^2.0.0",
+    "prompt": "^0.2.14",
     "superagent": "^0.20.0"
   },
   "exercises": {

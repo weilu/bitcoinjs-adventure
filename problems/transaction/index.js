@@ -5,10 +5,35 @@ var path = require('path')
 var bitcoin = require('bitcoinjs-lib')
 var assert = require('assert')
 var crypto = require('crypto')
+var prompt = require('prompt')
 var buildTx = require('./solution')
 
-//TODO: verify fee
 function verify(args, cb) {
+  var fn = require(path.resolve(args[0]))
+  verifyWithoutFee(fn, function(pass) {
+    if(!pass) return cb(false)
+
+    verifyWithFee(fn, function(passBonus) {
+      if(passBonus) {
+        console.log('\nIt works with user specified fees too. Good work!\n')
+        cb(true)
+      } else {
+        prompt.message = "Your solution works, but transaction fees are always zero. Would you like to try implementing a solution that allows user specified fees?"
+        prompt.start()
+
+        prompt.get('(y/n)', function (err, result) {
+          var answer = result['(y/n)'].toLowerCase()
+          cb(answer !== 'yes' && answer !== 'y')
+        })
+      }
+    })
+  })
+}
+
+function verifyWithFee(fn, cb) { _verify(fn, 80000, cb) }
+function verifyWithoutFee(fn, cb) { _verify(fn, 0, cb) }
+
+function _verify(fn, fee, cb) {
   var wif = "91hpDGhyKRC6APdhSSMkis6gKijKhqRhiYjYAobww53C7fB5KVz"
   var unspent = {
     txId: 'e598eb5502d8a94c3a8cf2cb1bdf4508d355f9da71ea296244157dee148a4a74',
@@ -18,10 +43,9 @@ function verify(args, cb) {
   var address = "mmtEeP9vnksyCWbA3crPJNH12bePVvs7iW"
   var amount = 120000
 
-  var fn = require(path.resolve(args[0]))
-  var actualTxHex = fn(wif, unspent, address, amount)
-  var expectedTxHex1 = buildTx(wif, unspent, address, amount)
-  var expectedTxHex2 = buildTxSwapOutputsOrder(wif, unspent, address, amount)
+  var actualTxHex = fn(wif, unspent, address, amount, fee)
+  var expectedTxHex1 = buildTx(wif, unspent, address, amount, fee)
+  var expectedTxHex2 = buildTxSwapOutputsOrder(wif, unspent, address, amount, fee)
 
   if(expectedTxHex1 === actualTxHex || expectedTxHex2 === actualTxHex) {
     return cb(true)
