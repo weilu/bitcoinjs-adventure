@@ -34,6 +34,7 @@
     "KeyGen": "problems/keygen",
     "Unspent": "problems/unspent",
     "Transaction Inputs & Outputs": "problems/txio",
-    "Transaction": "problems/transaction"
+    "Transaction": "problems/transaction",
+    "Transaction Propagation": "problems/sendtx"
   }
 }

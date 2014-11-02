@@ -8,4 +8,4 @@ bitcoinjs-lib workshop
 - [x] find unspent transaction outputs associated with an address (needs blockchain API)
 - [x] understand transaction inputs & outputs
 - [x] create & sign a Pay-to-PubkeyHash(address) transaction
-- [ ] transaction propagation (needs blockchain API)
+- [x] transaction propagation (needs blockchain API)
