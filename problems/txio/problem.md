@@ -12,7 +12,7 @@ To specify the input, we need
 
 The output includes:
 1. the address we are sending to
-2. the amount in satoshi
+2. the amount in satoshi (1 BTC = 100,000,000 satoshi)
 
 ## Input & Output Formats
 
@@ -51,3 +51,4 @@ In bitcoinjs-lib, check out TransactionBuilder and Transaction.
 ## Read more
 
 - [Bitcoin Transaction](https://en.bitcoin.it/wiki/Transaction)
+- [Bitcoin Units](https://en.bitcoin.it/wiki/Units)
