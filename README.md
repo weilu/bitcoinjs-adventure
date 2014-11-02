@@ -14,6 +14,8 @@ bitcoinjs-lib workshop
 
 ```bash
 npm install -g bitcoinjs-adventure
+mkdir nodeschool-bitcoin
+cd nodeschool-bitcoin
 bitcoinjs-adventure
 bitcoinjs-adventure verify address/index.js
 ```
