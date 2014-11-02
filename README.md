@@ -1,7 +1,7 @@
-bitcoinjs-adventure
+blockcoinjs-adventure
 ===================
 
-bitcoinjs-lib workshop
+blockcoinjs-lib workshop
 
 - private key to address
 - generate a private key
@@ -13,9 +13,9 @@ bitcoinjs-lib workshop
 ## Usage
 
 ```bash
-npm install -g bitcoinjs-adventure
-mkdir nodeschool-bitcoin
-cd nodeschool-bitcoin
-bitcoinjs-adventure
-bitcoinjs-adventure verify address/index.js
+npm install -g blockcoinjs-adventure
+mkdir nodeschool-blockcoin
+cd nodeschool-blockcoin
+blockcoinjs-adventure
+blockcoinjs-adventure verify address/index.js
 ```

@@ -2,7 +2,7 @@
 
 var fs = require('fs')
 var path = require('path')
-var bitcoin = require('bitcoinjs-lib')
+var blockcoin = require('blockcoinjs-lib')
 var assert = require('assert')
 var request = require('superagent')
 var getUnspents = require('./solution')

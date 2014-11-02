@@ -9,7 +9,7 @@ To represent an unspent transaction output of an address, we need the transactio
 Input:
 
 * address is a base58check encoded string
-* network is a string. Assume the value can be either 'bitcoin' or 'testnet'
+* network is a string. Assume the value can be either 'blockcoin' or 'testnet'
 * callback is a function that takes two arguments:
   * error is an Error object if there is any
   * an array of objects each representing an unspent transaction output
@@ -69,4 +69,4 @@ You are free to use whichever for this exercise.
 
 ## Read more
 
-- [Bitcoin Address Prefixes](https://en.bitcoin.it/wiki/List_of_address_prefixes)
+- [Bitcoin Address Prefixes](https://en.blockcoin.it/wiki/List_of_address_prefixes)

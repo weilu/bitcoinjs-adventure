@@ -2,14 +2,14 @@
 
 var fs = require('fs')
 var path = require('path')
-var bitcoin = require('bitcoinjs-lib')
+var blockcoin = require('blockcoinjs-lib')
 
 function verify(args, cb) {
   var fn = require(path.resolve(args[0]))
 
   try {
     var key1 = fn()
-    bitcoin.ECKey.fromWIF(key1)
+    blockcoin.ECKey.fromWIF(key1)
 
     if(key1 === fn()) {
       console.error("\nSmartpants, let's try again with a better RNG! http://xkcd.com/221/\n")

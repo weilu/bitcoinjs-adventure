@@ -10,7 +10,7 @@ Sample output: L2Jow6C4LgiU9Ciz5ahsP9LjnbvNUt3DF6hFqJwjzKaX5CKnazQ7
 ## Boilerplate
 
 ```js
-var bitcoin = require('bitcoinjs-lib')
+var blockcoin = require('blockcoinjs-lib')
 
 module.exports = function keygen() {
   // ...
@@ -21,9 +21,9 @@ Use `$ADVENTURE_COMMAND verify PROGRAM.js` to verify your program.
 
 ## Hints
 
-In bitcoinjs-lib, ECKey provides a keygen function.
+In blockcoinjs-lib, ECKey provides a keygen function.
 
 ## Read more
 
 - [Elliptic Curve Digital Signature Algorithm (ECDSA)](http://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)
-- [Bitcoin Private Key](https://en.bitcoin.it/wiki/Private_key)
+- [Bitcoin Private Key](https://en.blockcoin.it/wiki/Private_key)

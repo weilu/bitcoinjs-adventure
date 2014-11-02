@@ -2,11 +2,11 @@
 
 var fs = require('fs')
 var path = require('path')
-var bitcoin = require('bitcoinjs-lib')
+var blockcoin = require('blockcoinjs-lib')
 
 function verify(args, cb) {
     var fn = require(path.resolve(args[0]))
-    var key = bitcoin.ECKey.makeRandom()
+    var key = blockcoin.ECKey.makeRandom()
     cb(fn(key.toWIF()) === key.pub.getAddress().toString())
 }
 
