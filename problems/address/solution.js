@@ -1,6 +1,6 @@
-var bitcoin = require('bitcoinjs-lib')
+var blockcoin = require('blockcoinjs-lib')
 
 module.exports = function privKeyToAddress(wif) {
-  var key = bitcoin.ECKey.fromWIF(wif)
+  var key = blockcoin.ECKey.fromWIF(wif)
   return key.pub.getAddress().toString()
 }

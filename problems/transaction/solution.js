@@ -1,14 +1,14 @@
-var bitcoin = require('bitcoinjs-lib')
+var blockcoin = require('blockcoinjs-lib')
 
 module.exports = function buildTx(wif, unspent, toAddress, amount, fee) {
   if(fee == null) fee = 0
 
-  var txBuilder = new bitcoin.TransactionBuilder()
+  var txBuilder = new blockcoin.TransactionBuilder()
   txBuilder.addInput(unspent.txId, unspent.vout)
   txBuilder.addOutput(toAddress, amount)
 
   // deserialize private key
-  var privKey = bitcoin.ECKey.fromWIF(wif)
+  var privKey = blockcoin.ECKey.fromWIF(wif)
 
   // add change output
   var changeAddress = privKey.pub.getAddress(getNetwork(toAddress)).toString()
@@ -22,10 +22,10 @@ module.exports = function buildTx(wif, unspent, toAddress, amount, fee) {
 }
 
 function getNetwork(address) {
-  var version = bitcoin.Address.fromBase58Check(address).version
+  var version = blockcoin.Address.fromBase58Check(address).version
 
-  for (var networkName in bitcoin.networks) {
-    var network = bitcoin.networks[networkName]
+  for (var networkName in blockcoin.networks) {
+    var network = blockcoin.networks[networkName]
 
     if (version === network.pubKeyHash || version === network.scriptHash) return network
   }

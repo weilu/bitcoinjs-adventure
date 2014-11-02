@@ -35,7 +35,7 @@ buildTx('7ec210fe647ddfd6b5f05c3efafa9a5b65519d7d6b7462fe6f47d4f326efc8fd', 0, '
 ## Boilerplate
 
 ```js
-var bitcoin = require('bitcoinjs-lib')
+var blockcoin = require('blockcoinjs-lib')
 
 module.exports = function buildTx(prevTxId, prevTxOutIndex, toAddress, amount) {
   // ...
@@ -46,9 +46,9 @@ Use `$ADVENTURE_COMMAND verify PROGRAM.js` to verify your program.
 
 ## Hints
 
-In bitcoinjs-lib, check out TransactionBuilder and Transaction.
+In blockcoinjs-lib, check out TransactionBuilder and Transaction.
 
 ## Read more
 
-- [Bitcoin Transaction](https://en.bitcoin.it/wiki/Transaction)
-- [Bitcoin Units](https://en.bitcoin.it/wiki/Units)
+- [Bitcoin Transaction](https://en.blockcoin.it/wiki/Transaction)
+- [Bitcoin Units](https://en.blockcoin.it/wiki/Units)

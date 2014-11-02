@@ -5,7 +5,7 @@ var path = require('path')
 var request = require('superagent')
 var buildTx = require('../transaction/solution')
 var API = require('cb-blockr')
-var bitcoin = require('bitcoinjs-lib')
+var blockcoin = require('blockcoinjs-lib')
 
 function requestNewUnspent(callback) {
   console.info('fetching an unspent transaction output for testing...')
@@ -36,7 +36,7 @@ function verify(args, cb) {
     fn(txHex, 'testnet', function(err) {
       if(err) return console.error(err.stack)
 
-      var tx = bitcoin.Transaction.fromHex(txHex)
+      var tx = blockcoin.Transaction.fromHex(txHex)
       var txId = tx.getId()
       console.info('Your program indicates that transaction:', txHex, 'has been successfully propagated')
       console.info('verifying...')

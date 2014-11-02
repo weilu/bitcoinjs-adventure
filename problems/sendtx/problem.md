@@ -6,7 +6,7 @@ Write a program that broadcasts a given transaction to the given network.
 
 Input arguments:
 1. a hex seriazlied transaction string
-2. network string, it will be either 'bitcoin' or 'testnet'
+2. network string, it will be either 'blockcoin' or 'testnet'
 3. callback is a function that has a single argument: err is an Error object if there is any. If err is `null` or `undefined` we take it as the transaction has been successfully propagated
 
 ## Sample Inputs & Outputs

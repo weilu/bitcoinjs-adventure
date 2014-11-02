@@ -2,7 +2,7 @@
 
 var fs = require('fs')
 var path = require('path')
-var bitcoin = require('bitcoinjs-lib')
+var blockcoin = require('blockcoinjs-lib')
 var assert = require('assert')
 var crypto = require('crypto')
 
@@ -10,10 +10,10 @@ function verify(args, cb) {
   var fn = require(path.resolve(args[0]))
   var prevTxId = crypto.randomBytes(32).toString('hex')
   var prevTxIndex = 1
-  var address = bitcoin.ECKey.makeRandom().pub.getAddress().toString()
+  var address = blockcoin.ECKey.makeRandom().pub.getAddress().toString()
   var amount = 12000
 
-  var txBuilder = new bitcoin.TransactionBuilder()
+  var txBuilder = new blockcoin.TransactionBuilder()
   txBuilder.addInput(prevTxId, prevTxIndex)
   txBuilder.addOutput(address, amount)
   var expectedTx = txBuilder.buildIncomplete()
@@ -25,12 +25,12 @@ function verify(args, cb) {
     return cb(true)
   }
 
-  if(txHex instanceof bitcoin.Transaction) {
+  if(txHex instanceof blockcoin.Transaction) {
     console.log('\nLooks like you are returning a transaction object. Try serializing it into a hex string\n')
     return cb(false)
   }
 
-  var tx = bitcoin.Transaction.fromHex(txHex)
+  var tx = blockcoin.Transaction.fromHex(txHex)
   var inputCount = tx.ins == null ? 0 : tx.ins.length
   if(inputCount !== 1) {
     console.log('\nExpect the transaction to have 1 input, found', inputCount, '\n')

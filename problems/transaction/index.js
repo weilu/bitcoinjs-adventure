@@ -2,7 +2,7 @@
 
 var fs = require('fs')
 var path = require('path')
-var bitcoin = require('bitcoinjs-lib')
+var blockcoin = require('blockcoinjs-lib')
 var assert = require('assert')
 var crypto = require('crypto')
 var prompt = require('prompt')
@@ -51,7 +51,7 @@ function _verify(fn, fee, cb) {
     return cb(true)
   }
 
-  if(actualTxHex instanceof bitcoin.Transaction) {
+  if(actualTxHex instanceof blockcoin.Transaction) {
     console.log('\nLooks like you are returning a transaction object. Try serializing it into a hex string\n')
     return cb(false)
   }
@@ -62,15 +62,15 @@ function _verify(fn, fee, cb) {
   }
 
   try {
-    var tx = bitcoin.Transaction.fromHex(actualTxHex)
+    var tx = blockcoin.Transaction.fromHex(actualTxHex)
   } catch (e) {
     console.log('\nReturned string does not deserialize into a valid transaction:', actualTxHex)
     console.log('Try again :)\n')
     return cb(false)
   }
 
-  var expectedTx1 = bitcoin.Transaction.fromHex(expectedTxHex1)
-  var expectedTx2 = bitcoin.Transaction.fromHex(expectedTxHex2)
+  var expectedTx1 = blockcoin.Transaction.fromHex(expectedTxHex1)
+  var expectedTx2 = blockcoin.Transaction.fromHex(expectedTxHex2)
 
   var inputCount = tx.ins == null ? 0 : tx.ins.length
   if(inputCount !== expectedTx1.ins.length) {
@@ -119,10 +119,10 @@ function _verify(fn, fee, cb) {
 function buildTxSwapOutputsOrder(wif, unspent, toAddress, amount, fee) {
   if(fee == null) fee = 0
 
-  var txBuilder = new bitcoin.TransactionBuilder()
+  var txBuilder = new blockcoin.TransactionBuilder()
   txBuilder.addInput(unspent.txId, unspent.vout)
 
-  var privKey = bitcoin.ECKey.fromWIF(wif)
+  var privKey = blockcoin.ECKey.fromWIF(wif)
   var changeAddress = privKey.pub.getAddress(getNetwork(toAddress)).toString()
   var changeAmount = unspent.value - amount - fee
   txBuilder.addOutput(changeAddress, changeAmount)
@@ -134,10 +134,10 @@ function buildTxSwapOutputsOrder(wif, unspent, toAddress, amount, fee) {
 }
 
 function getNetwork(address) {
-  var version = bitcoin.Address.fromBase58Check(address).version
+  var version = blockcoin.Address.fromBase58Check(address).version
 
-  for (var networkName in bitcoin.networks) {
-    var network = bitcoin.networks[networkName]
+  for (var networkName in blockcoin.networks) {
+    var network = blockcoin.networks[networkName]
 
     if (version === network.pubKeyHash || version === network.scriptHash) return network
   }

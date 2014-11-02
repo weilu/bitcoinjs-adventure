@@ -1,4 +1,4 @@
-var bitcoin = require('bitcoinjs-lib')
+var blockcoin = require('blockcoinjs-lib')
 
 module.exports = function privKeyToAddress(wif) {
   // ...
