@@ -52,7 +52,7 @@ Use `$ADVENTURE_COMMAND verify PROGRAM.js` to verify your program.
 
 ## Hints
 
-You will need to talk to a blockchain API for such information. There are many out there:
+Your program will need to talk to a blockchain API for such information. There are many out there:
 
 - [blockchain.info](https://blockchain.info/api/blockchain_api)
 - [blockr.io](http://btc.blockr.io/documentation/api)
